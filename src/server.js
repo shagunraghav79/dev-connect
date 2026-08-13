@@ -1,13 +1,15 @@
 require("dotenv").config();
 const express = require("express");
- const connectdb= require("./Config/database");
-
-
+const connectdb= require("./Config/database");
 const app = express();
+const User= require("./models/user");
 
 
 
-connectdb().then(()=>{
+
+
+connectdb()
+.then(()=>{
     console.log("database connected");
     app.listen(3000, () => {
     console.log("Server running on port 3000");
